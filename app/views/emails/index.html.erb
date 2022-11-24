@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Gmaîl</h1>
+
+<div class="new">
+  <%= link_to "New email", new_email_path %>
+</div>
+
+<section class="container">
+  <div class="col_1">
+    <div class="maail">
+      <div id="emails">
+        <% @emails.each do |email| %>
+        <div class="multi">
+          <%= render email %>
+          <p><strong>email n° <%= email.id %></strong><br>
+          <%= email.object%><br>
+          <button id="show">leboutton
+          <%# <%= link_to "Show this email", email %> %>
+          </button>
+          </p>
+          
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="col_1">
+    <div class="select">
+      <h2>Email selected</h2>
+              <% @emails.each do |email| %>
+        <div class="multi">
+          <%= render email %>
+          <p><strong>email n° <%= email.id %></strong><br>
+          <%= email.body%><br>
+          <%= link_to "Show this email", email %>
+          </p>
+          
+        </div>
+        <% end %>
+      <p>Beebop Lula</p>
+    </div>
+  </div>
+</section>
